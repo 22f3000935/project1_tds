@@ -35,7 +35,7 @@ def A2(prettier_version="prettier@3.4.2", filename="/data/format.md"):
     command = ["npx", "--yes", prettier_version, "--write", filename.lstrip("/")]
     
     try:
-        subprocess.run(command, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        subprocess.run(command, check=True)
         print("Prettier executed successfully.")
         return None  # No need to read the file again
     except subprocess.CalledProcessError as e:
